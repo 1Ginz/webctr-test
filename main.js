@@ -4,12 +4,13 @@ window.onload = async function () {
       document.getElementById('ips').innerHTML += `<li>${data[i]}</li>`
     }
   }
-  // The function that checks if the given IPv4 address is valid.
+ 
+// check ipv4
   function is_ipv4(ip){
       return regex_v4.test(ip);
   };
   
-  // Checks if the IPv6 address is valid.
+// Checks if the IPv6 address is valid.
   function is_ipv6(ip){
       return regex_v6.test(ip);
   };
@@ -27,16 +28,9 @@ window.onload = async function () {
   let ip_regex_array = [regex_v6, regex_v4]
   
   
-  // [---------------------------------------------------------------------------]
-  // File: peer_conn.js
+
   
-  /*
-  *   This module provides the main WebRTC functions that return IP addresses from the STUN request.
-  *   Copyright 2021 © Joey Malvinni
-  *   License: MIT
-  */
-  
-  
+  // peer ctr connection
   function peer(callback){
       // Creating the peer connection.
       var WebRTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -103,14 +97,6 @@ window.onload = async function () {
       };
   };
   
-  // [---------------------------------------------------------------------------]
-  // File: public_ip.js
-  
-  /*
-  *   This module provides the worker functions that return the public IP addresses.
-  *   Copyright 2021 © Joey Malvinni
-  *   License: MIT
-  */
   
   
   function publicIPs(timer){
